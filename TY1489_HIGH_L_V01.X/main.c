@@ -135,8 +135,8 @@ bool fDRL_Gradually = 0;
 // POS Gradually brighten
 bool fPOS_Gradually = 0;
 
-// #define LOGIC_LEVEL (16)
-#define LOGIC_LEVEL (20)
+ #define LOGIC_LEVEL (16)
+//#define LOGIC_LEVEL (20)
 #define HiBeam_OFF() HB_EN_SetHigh()
 #define HiBeam_ON() HB_EN_SetLow()
 // duty 0%

@@ -5707,7 +5707,7 @@ void ECCP3_CallBack(uint16_t capturedValue)
             if (fHead == 0) {
                 do { LATCbits.LATC4 = 1; } while(0);
 
-                if (diff_us < (20)) {
+                if (diff_us < (16)) {
 
                     fHead = 1;
                     data_cnt = 0;
@@ -5715,7 +5715,7 @@ void ECCP3_CallBack(uint16_t capturedValue)
                 }
             } else {
 
-                if (diff_us < (20)) {
+                if (diff_us < (16)) {
 
                     do { LATCbits.LATC4 = 0; } while(0);
                     rx_data &= ~(1 << data_cnt);

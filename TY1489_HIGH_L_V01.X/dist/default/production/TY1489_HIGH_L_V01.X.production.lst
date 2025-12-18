@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
-                                                                                               Thu Sep 11 13:46:09 2025
+                                                                                               Wed Dec 17 16:55:28 2025
 
 Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
      1                           	processor	16F1936
@@ -5647,8 +5647,8 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5612     023A  160E               	bsf	14,4	;volatile
   5613     023B                     i1l1936:
   5614                           
-  5615                           ;main.c: 618:                 if (diff_us < (20)) {
-  5616     023B  3014               	movlw	20
+  5615                           ;main.c: 618:                 if (diff_us < (16)) {
+  5616     023B  3010               	movlw	16
   5617     023C  0020               	movlb	0	; select bank0
   5618     023D  023A               	subwf	ECCP3_CallBack@diff_us,w
   5619     023E  1803               	skipnc
@@ -5672,8 +5672,8 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5637     0247  2AA9               	goto	i1l526
   5638     0248                     i1l1944:
   5639                           
-  5640                           ;main.c: 626:                 if (diff_us < (20)) {
-  5641     0248  3014               	movlw	20
+  5640                           ;main.c: 626:                 if (diff_us < (16)) {
+  5641     0248  3010               	movlw	16
   5642     0249  023A               	subwf	ECCP3_CallBack@diff_us,w
   5643     024A  1803               	skipnc
   5644     024B  2A4D               	goto	u126_21
@@ -6218,7 +6218,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.46 build 20240104201356 
-Symbol Table                                                                                   Thu Sep 11 13:46:09 2025
+Symbol Table                                                                                   Wed Dec 17 16:55:28 2025
 
                                       _D2 0073                                        _D3 0043  
                                       l31 0430                                        l40 053C  

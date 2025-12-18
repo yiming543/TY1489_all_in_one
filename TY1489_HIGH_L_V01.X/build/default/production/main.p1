@@ -1932,8 +1932,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 530 ]
 "618
-[; ;main.c: 618:                 if (diff_us < (20)) {
-[e $ ! < -> F3169 `i -> 20 `i 532  ]
+[; ;main.c: 618:                 if (diff_us < (16)) {
+[e $ ! < -> F3169 `i -> 16 `i 532  ]
 {
 "620
 [; ;main.c: 620:                     fHead = 1;
@@ -1959,8 +1959,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 528 ]
 {
 "626
-[; ;main.c: 626:                 if (diff_us < (20)) {
-[e $ ! < -> F3169 `i -> 20 `i 537  ]
+[; ;main.c: 626:                 if (diff_us < (16)) {
+[e $ ! < -> F3169 `i -> 16 `i 537  ]
 {
 "628
 [; ;main.c: 628:                     do { LATCbits.LATC4 = 0; } while(0);
