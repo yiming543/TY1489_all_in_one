@@ -1,0 +1,194 @@
+/**
+  @Generated Pin Manager Header File
+
+  @Company:
+    Microchip Technology Inc.
+
+  @File Name:
+    pin_manager.h
+
+  @Summary:
+    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+
+  @Description
+    This header file provides APIs for driver for .
+    Generation Information :
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.8
+        Device            :  PIC16F1936
+        Driver Version    :  2.11
+    The generated drivers are tested against the following:
+        Compiler          :  XC8 2.36 and above
+        MPLAB 	          :  MPLAB X 6.00	
+*/
+
+/*
+    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+    
+    Subject to your compliance with these terms, you may use Microchip software and any 
+    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
+    license terms applicable to your use of third party software (including open source software) that 
+    may accompany Microchip software.
+    
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
+    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
+    FOR A PARTICULAR PURPOSE.
+    
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
+    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
+    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
+    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
+    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
+    SOFTWARE.
+*/
+
+#ifndef PIN_MANAGER_H
+#define PIN_MANAGER_H
+
+/**
+  Section: Included Files
+*/
+
+#include <xc.h>
+
+#define INPUT   1
+#define OUTPUT  0
+
+#define HIGH    1
+#define LOW     0
+
+#define ANALOG      1
+#define DIGITAL     0
+
+#define PULL_UP_ENABLED      1
+#define PULL_UP_DISABLED     0
+
+// get/set HB_EN aliases
+#define HB_EN_TRIS                 TRISAbits.TRISA0
+#define HB_EN_LAT                  LATAbits.LATA0
+#define HB_EN_PORT                 PORTAbits.RA0
+#define HB_EN_ANS                  ANSELAbits.ANSA0
+#define HB_EN_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
+#define HB_EN_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
+#define HB_EN_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
+#define HB_EN_GetValue()           PORTAbits.RA0
+#define HB_EN_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
+#define HB_EN_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
+#define HB_EN_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
+#define HB_EN_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
+
+// get/set Lamp_R_EN aliases
+#define Lamp_R_EN_TRIS                 TRISBbits.TRISB3
+#define Lamp_R_EN_LAT                  LATBbits.LATB3
+#define Lamp_R_EN_PORT                 PORTBbits.RB3
+#define Lamp_R_EN_WPU                  WPUBbits.WPUB3
+#define Lamp_R_EN_ANS                  ANSELBbits.ANSB3
+#define Lamp_R_EN_SetHigh()            do { LATBbits.LATB3 = 1; } while(0)
+#define Lamp_R_EN_SetLow()             do { LATBbits.LATB3 = 0; } while(0)
+#define Lamp_R_EN_Toggle()             do { LATBbits.LATB3 = ~LATBbits.LATB3; } while(0)
+#define Lamp_R_EN_GetValue()           PORTBbits.RB3
+#define Lamp_R_EN_SetDigitalInput()    do { TRISBbits.TRISB3 = 1; } while(0)
+#define Lamp_R_EN_SetDigitalOutput()   do { TRISBbits.TRISB3 = 0; } while(0)
+#define Lamp_R_EN_SetPullup()          do { WPUBbits.WPUB3 = 1; } while(0)
+#define Lamp_R_EN_ResetPullup()        do { WPUBbits.WPUB3 = 0; } while(0)
+#define Lamp_R_EN_SetAnalogMode()      do { ANSELBbits.ANSB3 = 1; } while(0)
+#define Lamp_R_EN_SetDigitalMode()     do { ANSELBbits.ANSB3 = 0; } while(0)
+
+// get/set Lamp_LOW_EN aliases
+#define Lamp_LOW_EN_TRIS                 TRISBbits.TRISB5
+#define Lamp_LOW_EN_LAT                  LATBbits.LATB5
+#define Lamp_LOW_EN_PORT                 PORTBbits.RB5
+#define Lamp_LOW_EN_WPU                  WPUBbits.WPUB5
+#define Lamp_LOW_EN_ANS                  ANSELBbits.ANSB5
+#define Lamp_LOW_EN_SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
+#define Lamp_LOW_EN_SetLow()             do { LATBbits.LATB5 = 0; } while(0)
+#define Lamp_LOW_EN_Toggle()             do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0)
+#define Lamp_LOW_EN_GetValue()           PORTBbits.RB5
+#define Lamp_LOW_EN_SetDigitalInput()    do { TRISBbits.TRISB5 = 1; } while(0)
+#define Lamp_LOW_EN_SetDigitalOutput()   do { TRISBbits.TRISB5 = 0; } while(0)
+#define Lamp_LOW_EN_SetPullup()          do { WPUBbits.WPUB5 = 1; } while(0)
+#define Lamp_LOW_EN_ResetPullup()        do { WPUBbits.WPUB5 = 0; } while(0)
+#define Lamp_LOW_EN_SetAnalogMode()      do { ANSELBbits.ANSB5 = 1; } while(0)
+#define Lamp_LOW_EN_SetDigitalMode()     do { ANSELBbits.ANSB5 = 0; } while(0)
+
+// get/set P2_EN aliases
+#define P2_EN_TRIS                 TRISBbits.TRISB7
+#define P2_EN_LAT                  LATBbits.LATB7
+#define P2_EN_PORT                 PORTBbits.RB7
+#define P2_EN_WPU                  WPUBbits.WPUB7
+#define P2_EN_SetHigh()            do { LATBbits.LATB7 = 1; } while(0)
+#define P2_EN_SetLow()             do { LATBbits.LATB7 = 0; } while(0)
+#define P2_EN_Toggle()             do { LATBbits.LATB7 = ~LATBbits.LATB7; } while(0)
+#define P2_EN_GetValue()           PORTBbits.RB7
+#define P2_EN_SetDigitalInput()    do { TRISBbits.TRISB7 = 1; } while(0)
+#define P2_EN_SetDigitalOutput()   do { TRISBbits.TRISB7 = 0; } while(0)
+#define P2_EN_SetPullup()          do { WPUBbits.WPUB7 = 1; } while(0)
+#define P2_EN_ResetPullup()        do { WPUBbits.WPUB7 = 0; } while(0)
+
+// get/set RC1 procedures
+#define RC1_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
+#define RC1_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
+#define RC1_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
+#define RC1_GetValue()              PORTCbits.RC1
+#define RC1_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
+#define RC1_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
+
+// get/set RC2 procedures
+#define RC2_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define RC2_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define RC2_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define RC2_GetValue()              PORTCbits.RC2
+#define RC2_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define RC2_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+
+// get/set UART_TX aliases
+#define UART_TX_TRIS                 TRISCbits.TRISC4
+#define UART_TX_LAT                  LATCbits.LATC4
+#define UART_TX_PORT                 PORTCbits.RC4
+#define UART_TX_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
+#define UART_TX_SetLow()             do { LATCbits.LATC4 = 0; } while(0)
+#define UART_TX_Toggle()             do { LATCbits.LATC4 = ~LATCbits.LATC4; } while(0)
+#define UART_TX_GetValue()           PORTCbits.RC4
+#define UART_TX_SetDigitalInput()    do { TRISCbits.TRISC4 = 1; } while(0)
+#define UART_TX_SetDigitalOutput()   do { TRISCbits.TRISC4 = 0; } while(0)
+
+// get/set RC6 procedures
+#define RC6_SetHigh()            do { LATCbits.LATC6 = 1; } while(0)
+#define RC6_SetLow()             do { LATCbits.LATC6 = 0; } while(0)
+#define RC6_Toggle()             do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0)
+#define RC6_GetValue()              PORTCbits.RC6
+#define RC6_SetDigitalInput()    do { TRISCbits.TRISC6 = 1; } while(0)
+#define RC6_SetDigitalOutput()   do { TRISCbits.TRISC6 = 0; } while(0)
+
+/**
+   @Param
+    none
+   @Returns
+    none
+   @Description
+    GPIO and peripheral I/O initialization
+   @Example
+    PIN_MANAGER_Initialize();
+ */
+void PIN_MANAGER_Initialize (void);
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handling routine
+ * @Example
+    PIN_MANAGER_IOC();
+ */
+void PIN_MANAGER_IOC(void);
+
+
+
+#endif // PIN_MANAGER_H
+/**
+ End of File
+*/
