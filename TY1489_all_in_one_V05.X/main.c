@@ -106,6 +106,7 @@
 #include "main.h"
 #include <pic16f1936.h>
 #include <stdbool.h>
+void POS_OFF(void);
 
 static const uint8_t CS[64] = {
     // 行車,晝行,近燈,遠燈,左方,右方
@@ -258,20 +259,22 @@ void Exception_handling2(void) {
     P2_OFF();      // P2亮
     LoBeam_OFF(); // 遠燈 OFF
     HiBeam_OFF(); // 遠燈 OFF
-    if (fPOS_Gradually == 0) {
-      INTERRUPT_GlobalInterruptDisable();
-      POS_Gradually();
-      INTERRUPT_GlobalInterruptEnable();
-    }
+    POS_OFF();
+    // if (fPOS_Gradually == 0) {
+    //   INTERRUPT_GlobalInterruptDisable();
+    //   POS_Gradually();
+    //   INTERRUPT_GlobalInterruptEnable();
+    // }
     T10MS_CNT = 0;  // 重置2000ms計數器
     T10MS_CNT1 = 0; // 重置2000ms計數器
-  } else {
-    fUnlock = 0;
-    if (T10MS_CNT1 > 50) {
-      T10MS_CNT1 = 50;
-      fPOS_Gradually = 0;
-    }
-  }
+  } 
+  // else {
+  //   fUnlock = 0;
+  //   if (T10MS_CNT1 > 50) {
+  //     T10MS_CNT1 = 50;
+  //     fPOS_Gradually = 0;
+  //   }
+  // }
 }
 
 void HiBeam_ON(void) { HB_EN_SetLow(); }
@@ -326,6 +329,7 @@ void DRL_ON(void) {
 
 void DRL_OFF(void) { DRL_PWM_OFF(); }
 void POS_ON(void) { POS_PWM_SET(); }
+void POS_OFF(void) { DRL_PWM_OFF(); }
 void P2_ON(void) { P2_EN_SetHigh(); }
 void P2_OFF(void) { P2_EN_SetLow(); }
 
